@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Your Venue - Sports Booking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#f8fdf9] min-h-screen py-12 px-6 md:px-10">
+    <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <div class="mb-10">
+            <a href="index.html" class="text-emerald-600 hover:text-emerald-700 font-medium text-sm mb-4 inline-flex items-center gap-2 transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                </svg>
+                Back to venues
+            </a>
+            <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-gray-900 mt-6 mb-3">List your venue</h1>
+            <p class="text-gray-500 text-lg">Share your sports facility with thousands of players</p>
+        </div>
+
+        <!-- Form Card -->
+        <div class="bg-white border border-gray-200 rounded-xl shadow-sm p-8 md:p-10">
+            <form id="listingForm" class="space-y-8">
+                <!-- Venue Information Section -->
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">Venue Information</h2>
+                    <div class="space-y-5">
+                        <!-- Venue Name -->
+                        <div>
+                            <label for="venueName" class="block text-sm font-medium text-gray-700 mb-2">Venue Name *</label>
+                            <input type="text" id="venueName" name="venueName" required 
+                                class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                                placeholder="e.g., Prime Sports Arena">
+                        </div>
+
+                        <!-- Sport Type -->
+                        <div>
+                            <label for="sportType" class="block text-sm font-medium text-gray-700 mb-2">Sport Type *</label>
+                            <select id="sportType" name="sportType" required 
+                                class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all">
+                                <option value="">Select sport type</option>
+                                <option value="football">Football</option>
+                                <option value="cricket">Cricket</option>
+                                <option value="badminton">Badminton</option>
+                                <option value="tennis">Tennis</option>
+                                <option value="basketball">Basketball</option>
+                                <option value="swimming">Swimming</option>
+                                <option value="volleyball">Volleyball</option>
+                                <option value="boxing">Boxing</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Capacity -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label for="capacity" class="block text-sm font-medium text-gray-700 mb-2">Capacity *</label>
+                                <input type="text" id="capacity" name="capacity" required 
+                                    class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                                    placeholder="e.g., 7v7, 6 Courts">
+                            </div>
+                            <div>
+                                <label for="surfaceType" class="block text-sm font-medium text-gray-700 mb-2">Surface Type</label>
+                                <input type="text" id="surfaceType" name="surfaceType" 
+                                    class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                                    placeholder="e.g., Synthetic turf, Hard court">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location Section -->
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">Location</h2>
+                    <div class="space-y-5">
+                        <!-- Address -->
+                        <div>
+                            <label for="address" class="block text-sm font-medium text-gray-700 mb-2">Full Address *</label>
+                            <textarea id="address" name="address" rows="3" required 
+                                class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all resize-none"
+                                placeholder="Enter complete address"></textarea>
+                        </div>
+
+                        <!-- City and Area -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label for="area" class="block text-sm font-medium text-gray-700 mb-2">Area *</label>
+                                <input type="text" id="area" name="area" required 
+                                    class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                                    placeholder="e.g., Andheri West">
+                            </div>
+                            <div>
+                                <label for="city" class="block text-sm font-medium text-gray-700 mb-2">City *</label>
+                                <input type="text" id="city" name="city" required 
+                                    class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                                    placeholder="e.g., Mumbai">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing & Availability Section -->
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">Pricing & Availability</h2>
+                    <div class="space-y-5">
+                        <!-- Pricing -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label for="pricePerHour" class="block text-sm font-medium text-gray-700 mb-2">Price per Hour (₹) *</label>
+                                <input type="number" id="pricePerHour" name="pricePerHour" required min="0"
+                                    class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                                    placeholder="e.g., 2200">
+                            </div>
+                            <div>
+                                <label for="slotsAvailable" class="block text-sm font-medium text-gray-700 mb-2">Slots Available Today</label>
+                                <input type="number" id="slotsAvailable" name="slotsAvailable" min="0"
+                                    class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                                    placeholder="e.g., 8">
+                            </div>
+                        </div>
+
+                        <!-- Operating Hours -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label for="openingTime" class="block text-sm font-medium text-gray-700 mb-2">Opening Time *</label>
+                                <input type="time" id="openingTime" name="openingTime" required 
+                                    class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all">
+                            </div>
+                            <div>
+                                <label for="closingTime" class="block text-sm font-medium text-gray-700 mb-2">Closing Time *</label>
+                                <input type="time" id="closingTime" name="closingTime" required 
+                                    class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Amenities Section -->
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">Amenities</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" name="amenities" value="parking" class="w-4 h-4 text-emerald-500 border-gray-300 rounded focus:ring-emerald-500">
+                            <span class="text-sm text-gray-700">Parking</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" name="amenities" value="washroom" class="w-4 h-4 text-emerald-500 border-gray-300 rounded focus:ring-emerald-500">
+                            <span class="text-sm text-gray-700">Washroom</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" name="amenities" value="changing-room" class="w-4 h-4 text-emerald-500 border-gray-300 rounded focus:ring-emerald-500">
+                            <span class="text-sm text-gray-700">Changing Room</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" name="amenities" value="ac" class="w-4 h-4 text-emerald-500 border-gray-300 rounded focus:ring-emerald-500">
+                            <span class="text-sm text-gray-700">AC</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" name="amenities" value="floodlights" class="w-4 h-4 text-emerald-500 border-gray-300 rounded focus:ring-emerald-500">
+                            <span class="text-sm text-gray-700">Floodlights</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" name="amenities" value="cafeteria" class="w-4 h-4 text-emerald-500 border-gray-300 rounded focus:ring-emerald-500">
+                            <span class="text-sm text-gray-700">Cafeteria</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" name="amenities" value="first-aid" class="w-4 h-4 text-emerald-500 border-gray-300 rounded focus:ring-emerald-500">
+                            <span class="text-sm text-gray-700">First Aid</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" name="amenities" value="equipment-rental" class="w-4 h-4 text-emerald-500 border-gray-300 rounded focus:ring-emerald-500">
+                            <span class="text-sm text-gray-700">Equipment Rental</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" name="amenities" value="wifi" class="w-4 h-4 text-emerald-500 border-gray-300 rounded focus:ring-emerald-500">
+                            <span class="text-sm text-gray-700">WiFi</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Contact Information Section -->
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">Contact Information</h2>
+                    <div class="space-y-5">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label for="ownerName" class="block text-sm font-medium text-gray-700 mb-2">Owner Name *</label>
+                                <input type="text" id="ownerName" name="ownerName" required 
+                                    class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                                    placeholder="Your name">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required 
+                                    class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                                    placeholder="+91 98765 43210">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                            <input type="email" id="email" name="email" required 
+                                class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                                placeholder="your.email@example.com">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Details -->
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">Additional Details</h2>
+                    <div>
+                        <label for="description" class="block text-sm font-medium text-gray-700 mb-2">Description</label>
+                        <textarea id="description" name="description" rows="4" 
+                            class="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all resize-none"
+                            placeholder="Tell us more about your venue, special features, rules, etc."></textarea>
+                    </div>
+                </div>
+
+                <!-- Image Upload -->
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">Venue Images</h2>
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-emerald-500 transition-colors">
+                        <div class="flex flex-col items-center">
+                            <svg class="w-12 h-12 text-gray-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                            </svg>
+                            <label for="images" class="cursor-pointer">
+                                <span class="text-emerald-600 hover:text-emerald-700 font-medium">Upload images</span>
+                                <span class="text-gray-500"> or drag and drop</span>
+                            </label>
+                            <input type="file" id="images" name="images" multiple accept="image/*" class="hidden">
+                            <p class="text-xs text-gray-500 mt-2">PNG, JPG up to 10MB each</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="flex gap-4 pt-6 border-t border-gray-200">
+                    <button type="button" onclick="window.location.href='index.html'" 
+                        class="px-6 py-3 border border-gray-200 rounded-lg font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
+                        Cancel
+                    </button>
+                    <button type="submit" 
+                        class="flex-1 bg-emerald-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-emerald-500/25">
+                        Submit for Review
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Info Box -->
+        <div class="mt-8 bg-emerald-50 border border-emerald-200 rounded-lg p-6">
+            <div class="flex gap-3">
+                <svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                    <h3 class="font-semibold text-emerald-900 mb-1">What happens next?</h3>
+                    <p class="text-sm text-emerald-800">Our team will review your listing within 24-48 hours. Once approved, your venue will be live and visible to thousands of players looking to book.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('listingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Get amenities (checkboxes)
+            const amenities = Array.from(document.querySelectorAll('input[name="amenities"]:checked'))
+                .map(cb => cb.value);
+            data.amenities = amenities;
+            
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            alert('Thank you! Your venue listing has been submitted for review. We will contact you within 24-48 hours.');
+            
+            // Redirect to main page
+            window.location.href = 'index.html';
+        });
+
+        // Handle image upload display
+        document.getElementById('images').addEventListener('change', function(e) {
+            const files = Array.from(e.target.files);
+            if (files.length > 0) {
+                const fileNames = files.map(f => f.name).join(', ');
+                console.log('Selected files:', fileNames);
+            }
+        });
+    </script>
+</body>
+</html>

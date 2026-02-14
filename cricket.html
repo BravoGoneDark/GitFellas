@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Venues - Court</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-[#f8fdf9] text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="border-none bg-white">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-12">
+                    <a href="index.html" class="text-2xl font-semibold">Court</a>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="index.html" class="text-sm text-gray-600 hover:text-gray-900 transition-colors">Venues</a>
+                        <a href="#" class="text-sm text-gray-600 hover:text-gray-900 transition-colors">Players</a>
+                        <a href="#" class="text-sm text-gray-600 hover:text-gray-900 transition-colors">Bookings</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                        Sign in
+                    </button>
+                    <button class="px-5 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">
+                        Get started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-3 mb-4">
+                <a href="index.html" class="text-emerald-600 hover:text-emerald-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </a>
+                <h1 class="text-4xl font-bold text-gray-900">Cricket Venues</h1>
+            </div>
+            <p class="text-gray-600 text-lg">Find the perfect cricket ground or nets for your practice</p>
+        </div>
+    </section>
+
+    <!-- Cricket Venues Grid -->
+    <section class="py-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <!-- Filter Bar -->
+            <div class="mb-8 flex gap-3 flex-wrap">
+                <select class="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                    <option>All locations</option>
+                    <option>Bandra</option>
+                    <option>Andheri</option>
+                    <option>Mumbai</option>
+                    <option>Thane</option>
+                    <option>Panvel</option>
+                </select>
+                <select class="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                    <option>All types</option>
+                    <option>Nets</option>
+                    <option>Turf Wicket</option>
+                    <option>Cement Wicket</option>
+                    <option>Full Ground</option>
+                </select>
+                <select class="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                    <option>Sort by: Recommended</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                    <option>Rating</option>
+                    <option>Distance</option>
+                </select>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Cricket Card 1 -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/15 hover:-translate-y-1 group">
+                    <div class="relative">
+                        <span class="absolute top-3.5 right-3.5 bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-semibold z-10">New listing</span>
+                        <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=500&h=300&fit=crop" alt="Cricket Nets" class="h-52 w-full object-cover">
+                    </div>
+                    <div class="p-5.5">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-gray-900 tracking-tight">Elite Cricket Nets</h3>
+                                <div class="text-sm text-gray-500 flex items-center gap-1 mb-4">
+                                    <span>📍</span>
+                                    <span>Kandivali • 5.8 km</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-1 bg-amber-100 px-2.5 py-1.5 rounded-full flex-shrink-0 ml-3">
+                                <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 fill-amber-500">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <span class="font-semibold text-sm text-amber-700">4.5</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2.5 mb-5 flex-wrap text-sm text-gray-500">
+                            <span>Cricket</span>
+                            <span class="w-1 h-1 bg-gray-400 rounded-full opacity-50"></span>
+                            <span>6 Nets</span>
+                            <span class="w-1 h-1 bg-gray-400 rounded-full opacity-50"></span>
+                            <span>Bowling machine</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-4.5 border-t border-gray-200">
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-3xl font-bold text-emerald-700 tracking-tight">₹600</span>
+                                <span class="text-sm text-gray-500 font-medium">/hr</span>
+                            </div>
+                            <button class="bg-emerald-500 text-white px-7 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 hover:bg-emerald-600 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-emerald-500/25 active:translate-y-0">Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cricket Card 2 -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/15 hover:-translate-y-1 group">
+                    <div class="relative">
+                        <span class="absolute top-3.5 right-3.5 bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-semibold z-10">Popular</span>
+                        <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=500&h=300&fit=crop" alt="Cricket Academy" class="h-52 w-full object-cover">
+                    </div>
+                    <div class="p-5.5">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-gray-900 tracking-tight">Champions Cricket Academy</h3>
+                                <div class="text-sm text-gray-500 flex items-center gap-1 mb-4">
+                                    <span>📍</span>
+                                    <span>Andheri • 3.5 km</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-1 bg-amber-100 px-2.5 py-1.5 rounded-full flex-shrink-0 ml-3">
+                                <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 fill-amber-500">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <span class="font-semibold text-sm text-amber-700">4.8</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2.5 mb-5 flex-wrap text-sm text-gray-500">
+                            <span>Cricket</span>
+                            <span class="w-1 h-1 bg-gray-400 rounded-full opacity-50"></span>
+                            <span>8 Nets</span>
+                            <span class="w-1 h-1 bg-gray-400 rounded-full opacity-50"></span>
+                            <span>Turf wicket</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-4.5 border-t border-gray-200">
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-3xl font-bold text-emerald-700 tracking-tight">₹750</span>
+                                <span class="text-sm text-gray-500 font-medium">/hr</span>
+                            </div>
+                            <button class="bg-emerald-500 text-white px-7 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 hover:bg-emerald-600 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-emerald-500/25 active:translate-y-0">Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cricket Card 3 -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/15 hover:-translate-y-1 group">
+                    <div class="relative">
+                        <span class="absolute top-3.5 right-3.5 bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-semibold z-10">Available now</span>
+                        <img src="https://images.unsplash.com/photo-1624526267942-ab0ff8a3e972?w=500&h=300&fit=crop" alt="Cricket Ground" class="h-52 w-full object-cover">
+                    </div>
+                    <div class="p-5.5">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-gray-900 tracking-tight">Victory Cricket Ground</h3>
+                                <div class="text-sm text-gray-500 flex items-center gap-1 mb-4">
+                                    <span>📍</span>
+                                    <span>Thane • 7.2 km</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-1 bg-amber-100 px-2.5 py-1.5 rounded-full flex-shrink-0 ml-3">
+                                <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 fill-amber-500">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <span class="font-semibold text-sm text-amber-700">4.9</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2.5 mb-5 flex-wrap text-sm text-gray-500">
+                            <span>Cricket</span>
+                            <span class="w-1 h-1 bg-gray-400 rounded-full opacity-50"></span>
+                            <span>Full Ground</span>
+                            <span class="w-1 h-1 bg-gray-400 rounded-full opacity-50"></span>
+                            <span>Natural turf</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-4.5 border-t border-gray-200">
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-3xl font-bold text-emerald-700 tracking-tight">₹3,500</span>
+                                <span class="text-sm text-gray-500 font-medium">/hr</span>
+                            </div>
+                            <button class="bg-emerald-500 text-white px-7 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 hover:bg-emerald-600 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-emerald-500/25 active:translate-y-0">Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cricket Card 4 -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/15 hover:-translate-y-1 group">
+                    <div class="relative">
+                        <span class="absolute top-3.5 right-3.5 bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-semibold z-10">Verified</span>
+                        <img src="https://images.unsplash.com/photo-1593341646782-e0b495cff86d?w=500&h=300&fit=crop" alt="Cricket Academy Nets" class="h-52 w-full object-cover">
+                    </div>
+                    <div class="p-5.5">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-gray-900 tracking-tight">Pro Cricket Academy</h3>
+                                <div class="text-sm text-gray-500 flex items-center gap-1 mb-4">
+                                    <span>📍</span>
+                                    <span>Bandra • 2.8 km</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-1 bg-amber-100 px-2.5 py-1.5 rounded-full flex-shrink-0 ml-3">
+                                <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 fill-amber-500">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <span class="font-semibold text-sm text-amber-700">4.7</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2.5 mb-5 flex-wrap text-sm text-gray-500">
+                            <span>Cricket</span>
+                            <span class="w-1 h-1 bg-gray-400 rounded-full opacity-50"></span>
+                            <span>4 Nets</span>
+                            <span class="w-1 h-1 bg-gray-400 rounded-full opacity-50"></span>
+                            <span>Indoor</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-4.5 border-t border-gray-200">
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-3xl font-bold text-emerald-700 tracking-tight">₹800</span>
+                                <span class="text-sm text-gray-500 font-medium">/hr</span>
+                            </div>
+                            <button class="bg-emerald-500 text-white px-7 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 hover:bg-emerald-600 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-emerald-500/25 active:translate-y-0">Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cricket Card 5 -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/15 hover:-translate-y-1 group">
+                    <div class="relative">
+                        <span class="absolute top-3.5 right-3.5 bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-semibold z-10">3 slots left</span>
+                        <img src="https://images.unsplash.com/photo-1589487391730-58f20eb2c308?w=500&h=300&fit=crop" alt="Cricket Nets Zone" class="h-52 w-full object-cover">
+                    </div>
+                    <div class="p-5.5">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-gray-900 tracking-tight">Striker's Cricket Zone</h3>
+                                <div class="text-sm text-gray-500 flex items-center gap-1 mb-4">
+                                    <span>📍</span>
+                                    <span>Powai • 4.9 km</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-1 bg-amber-100 px-2.5 py-1.5 rounded-full flex-shrink-0 ml-3">
+                                <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 fill-amber-500">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <span class="font-semibold text-sm text-amber-700">4.6</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2.5 mb-5 flex-wrap text-sm text-gray-500">
+                            <span>Cricket</span>
+                            <span class="w-1 h-1 bg-gray-400 rounded-full opacity-50"></span>
+                            <span>5 Nets</span>
+                            <span class="w-1 h-1 bg-gray-400 rounded-full opacity-50"></span>
+                            <span>Cement wicket</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-4.5 border-t border-gray-200">
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-3xl font-bold text-emerald-700 tracking-tight">₹550</span>
+                                <span class="text-sm text-gray-500 font-medium">/hr</span>
+                            </div>
+                            <button class="bg-emerald-500 text-white px-7 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 hover:bg-emerald-600 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-emerald-500/25 active:translate-y-0">Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cricket Card 6 -->
+                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/15 hover:-translate-y-1 group">
+                    <div class="relative">
+                        <span class="absolute top-3.5 right-3.5 bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-semibold z-10">Premium</span>
+                        <img src="https://images.unsplash.com/photo-1512719994953-eabf50895df7?w=500&h=300&fit=crop" alt="Cricket Stadium" class="h-52 w-full object-cover">
+                    </div>
+                    <div class="p-5.5">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-gray-900 tracking-tight">Royal Cricket Stadium</h3>
+                                <div class="text-sm text-gray-500 flex items-center gap-1 mb-4">
+                                    <span>📍</span>
+                                    <span>Panvel • 9.1 km</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-1 bg-amber-100 px-2.5 py-1.5 rounded-full flex-shrink-0 ml-3">
+                                <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 fill-amber-500">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <span class="font-semibold text-sm text-amber-700">4.8</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2.5 mb-5 flex-wrap text-sm text-gray-500">
+                            <span>Cricket</span>
+                            <span class="w-1 h-1 bg-gray-400 rounded-full opacity-50"></span>
+                            <span>Full Stadium</span>
+                            <span class="w-1 h-1 bg-gray-400 rounded-full opacity-50"></span>
+                            <span>Premium turf</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-4.5 border-t border-gray-200">
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-3xl font-bold text-emerald-700 tracking-tight">₹5,000</span>
+                                <span class="text-sm text-gray-500 font-medium">/hr</span>
+                            </div>
+                            <button class="bg-emerald-500 text-white px-7 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 hover:bg-emerald-600 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-emerald-500/25 active:translate-y-0">Book</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-200 mt-20">
+        <div class="max-w-7xl mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Court</h4>
+                    <p class="text-sm text-gray-600">
+                        The simplest way to book sports venues and connect with players.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="font-medium mb-4">Platform</h5>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <a href="#" class="block hover:text-gray-900">Find venues</a>
+                        <a href="#" class="block hover:text-gray-900">Find players</a>
+                        <a href="#" class="block hover:text-gray-900">My bookings</a>
+                        <a href="#" class="block hover:text-gray-900">How it works</a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="font-medium mb-4">For venues</h5>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <a href="#" class="block hover:text-gray-900">List your venue</a>
+                        <a href="#" class="block hover:text-gray-900">Pricing</a>
+                        <a href="#" class="block hover:text-gray-900">Resources</a>
+                        <a href="#" class="block hover:text-gray-900">Support</a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="font-medium mb-4">Company</h5>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <a href="#" class="block hover:text-gray-900">About</a>
+                        <a href="#" class="block hover:text-gray-900">Contact</a>
+                        <a href="#" class="block hover:text-gray-900">Careers</a>
+                        <a href="#" class="block hover:text-gray-900">Blog</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
+                <p>© 2026 Court. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-gray-900">Privacy</a>
+                    <a href="#" class="hover:text-gray-900">Terms</a>
+                    <a href="#" class="hover:text-gray-900">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
