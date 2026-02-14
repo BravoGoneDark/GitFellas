@@ -1426,6 +1426,11 @@
       border-color: var(--color-black);
     }
   }
+  .focus\:border-gray-400 {
+    &:focus {
+      border-color: var(--color-gray-400);
+    }
+  }
   .focus\:border-transparent {
     &:focus {
       border-color: transparent;

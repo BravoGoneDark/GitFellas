@@ -32,9 +32,9 @@ const venueData = {
         price: 850
     },
     venue3: {
-        name: "Prime Tennis Club",
+        name: "Prime Badminton Club",
         location: "Bandra",
-        sport: "Tennis",
+        sport: "Badminton",
         details: "4 Courts",
         price: 1100
     },
@@ -58,9 +58,56 @@ const venueData = {
         sport: "Volleyball",
         details: "Sand court",
         price: 1400
+    },
+    venue7: {
+        name: "Victory football ground",
+        location: "Bandra",
+        sport: "Football",
+        details: "11v11",
+        price: 3500
     }
 };
 
+const playerData = {
+    player1: {
+        name: "Rahul Kumar",
+        initials: "RK",
+        position: "Forward",
+        level: "Intermediate",
+        rating: "4.7",
+        gradient: "bg-gradient-to-br from-blue-400 to-blue-600"
+    },
+    player2: {
+        name: "Priya Shah",
+        initials: "PS",
+        position: "Singles",
+        level: "Advanced",
+        rating: "4.9",
+        gradient: "bg-gradient-to-br from-pink-400 to-purple-600"
+    },
+    player3: {
+        name: "Aditya Mehta",
+        initials: "AM",
+        position: "All-court",
+        level: "Expert",
+        rating: "4.8",
+        gradient: "bg-gradient-to-br from-orange-400 to-red-600"
+    },
+    player4: {
+        name: "Nisha Kapoor",
+        initials: "NK",
+        position: "Midfielder",
+        level: "Pro",
+        rating: "4.9",
+        gradient: "bg-gradient-to-br from-green-400 to-teal-600"
+    }
+};
+
+function invitePlayer(playerId) {
+    const player = playerData[playerId];
+    sessionStorage.setItem('selectedPlayer', JSON.stringify(player));
+    window.location.href = 'invite-player.html';
+}
 // Function to pass venue data to booking page
 function bookNow(venueId) {
     const venue = venueData[venueId];

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Invite - Court</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Custom Range Slider */
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 6px;
+            background: #e5e7eb;
+            border-radius: 3px;
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: #111827;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            background: #111827;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            transition: all 0.15s ease;
+        }
+
+        input[type="range"]::-moz-range-thumb:hover {
+            transform: scale(1.1);
+        }
+
+        .sport-btn, .date-btn {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .sport-btn:hover, .date-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .sport-btn.selected, .date-btn.selected {
+            background: #10b981 !important;
+            color: white !important;
+            border-color: #10b981 !important;
+        }
+
+        .date-btn.selected .text-gray-500 {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+        .date-btn.selected .text-lg {
+            color: white !important;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Header -->
+    <nav class="border-b border-gray-200">
+        <div class="max-w-4xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#" onclick="history.back()" class="flex items-center gap-2 text-gray-600 hover:text-gray-900">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                    Back
+                </a>
+                <h1 class="text-xl font-semibold">Court</h1>
+                <div class="w-20"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Invite Content -->
+    <div class="max-w-4xl mx-auto px-6 py-12">
+        
+        <!-- Player Info -->
+        <div class="mb-12">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-2xl font-semibold">
+                    RK
+                </div>
+                <div>
+                    <h2 class="text-2xl font-semibold" id="playerName">Rahul Kumar</h2>
+                    <p class="text-gray-600" id="playerDetails">Forward • Intermediate • 4.7 ⭐</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sport Selection -->
+        <div class="mb-12">
+            <h3 class="text-lg font-semibold mb-6">Select sport</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <button class="sport-btn p-4 border border-gray-200 rounded-lg text-center font-medium" onclick="selectSport(this, 'Football')">
+                    <div class="text-2xl mb-2">⚽</div>
+                    <div class="text-sm">Football</div>
+                </button>
+                <button class="sport-btn p-4 border border-gray-200 rounded-lg text-center font-medium" onclick="selectSport(this, 'Badminton')">
+                    <div class="text-2xl mb-2">🏸</div>
+                    <div class="text-sm">Badminton</div>
+                </button>
+                <button class="sport-btn p-4 border border-gray-200 rounded-lg text-center font-medium" onclick="selectSport(this, 'Tennis')">
+                    <div class="text-2xl mb-2">🎾</div>
+                    <div class="text-sm">Tennis</div>
+                </button>
+                <button class="sport-btn p-4 border border-gray-200 rounded-lg text-center font-medium" onclick="selectSport(this, 'Cricket')">
+                    <div class="text-2xl mb-2">🏏</div>
+                    <div class="text-sm">Cricket</div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Date Selection -->
+        <div class="mb-12">
+            <h3 class="text-lg font-semibold mb-6">Select date</h3>
+            <div class="grid grid-cols-7 gap-3">
+                <button class="date-btn p-4 border border-gray-200 rounded-lg text-center" onclick="selectDate(this)">
+                    <div class="text-xs text-gray-500 mb-1">Mon</div>
+                    <div class="text-lg font-semibold">15</div>
+                    <div class="text-xs text-gray-500">Feb</div>
+                </button>
+                <button class="date-btn p-4 border border-gray-200 rounded-lg text-center" onclick="selectDate(this)">
+                    <div class="text-xs text-gray-500 mb-1">Tue</div>
+                    <div class="text-lg font-semibold">16</div>
+                    <div class="text-xs text-gray-500">Feb</div>
+                </button>
+                <button class="date-btn p-4 border border-gray-200 rounded-lg text-center" onclick="selectDate(this)">
+                    <div class="text-xs text-gray-500 mb-1">Wed</div>
+                    <div class="text-lg font-semibold">17</div>
+                    <div class="text-xs text-gray-500">Feb</div>
+                </button>
+                <button class="date-btn p-4 border border-gray-200 rounded-lg text-center" onclick="selectDate(this)">
+                    <div class="text-xs text-gray-500 mb-1">Thu</div>
+                    <div class="text-lg font-semibold">18</div>
+                    <div class="text-xs text-gray-500">Feb</div>
+                </button>
+                <button class="date-btn p-4 border border-gray-200 rounded-lg text-center" onclick="selectDate(this)">
+                    <div class="text-xs text-gray-500 mb-1">Fri</div>
+                    <div class="text-lg font-semibold">19</div>
+                    <div class="text-xs text-gray-500">Feb</div>
+                </button>
+                <button class="date-btn p-4 border border-gray-200 rounded-lg text-center" onclick="selectDate(this)">
+                    <div class="text-xs text-gray-500 mb-1">Sat</div>
+                    <div class="text-lg font-semibold">20</div>
+                    <div class="text-xs text-gray-500">Feb</div>
+                </button>
+                <button class="date-btn p-4 border border-gray-200 rounded-lg text-center" onclick="selectDate(this)">
+                    <div class="text-xs text-gray-500 mb-1">Sun</div>
+                    <div class="text-lg font-semibold">21</div>
+                    <div class="text-xs text-gray-500">Feb</div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Time Selection -->
+        <div class="mb-12">
+            <h3 class="text-lg font-semibold mb-6">Select time</h3>
+            
+            <div class="bg-gray-50 rounded-2xl p-8">
+                <!-- Selected Time Display -->
+                <div class="text-center mb-8">
+                    <div class="text-5xl font-semibold mb-2" id="selectedTime">06:00</div>
+                    <div class="text-sm text-gray-600" id="timeOfDay">Morning</div>
+                </div>
+
+                <!-- Time Slider -->
+                <input 
+                    type="range" 
+                    min="6" 
+                    max="23" 
+                    value="6" 
+                    step="0.5" 
+                    id="timeSlider" 
+                    onchange="updateTime(this.value)"
+                    oninput="updateTime(this.value)"
+                >
+
+                <!-- Time Range Labels -->
+                <div class="flex justify-between mt-4 text-xs text-gray-500">
+                    <span>6 AM</span>
+                    <span>12 PM</span>
+                    <span>6 PM</span>
+                    <span>11 PM</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Optional Message -->
+        <div class="mb-12">
+            <h3 class="text-lg font-semibold mb-6">Add message (optional)</h3>
+            <textarea 
+                class="w-full p-4 border border-gray-200 rounded-xl resize-none focus:outline-none focus:border-gray-400 transition-colors" 
+                rows="4" 
+                placeholder="Hey! Want to play together?"
+                id="inviteMessage"
+            ></textarea>
+        </div>
+
+        <!-- Send Invite Button -->
+        <div class="border-t border-gray-200 pt-8">
+            <button onclick="sendInvite()" class="w-full py-4 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-colors">
+                Send invite
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        // Load player data from sessionStorage
+        window.addEventListener('DOMContentLoaded', function() {
+            const player = JSON.parse(sessionStorage.getItem('selectedPlayer'));
+            
+            if (player) {
+                document.getElementById('playerName').textContent = player.name;
+                document.getElementById('playerDetails').textContent = `${player.position} • ${player.level} • ${player.rating} ⭐`;
+                
+                // Update avatar
+                const avatar = document.querySelector('.w-16.h-16');
+                avatar.textContent = player.initials;
+                avatar.className = `w-16 h-16 rounded-full ${player.gradient} flex items-center justify-center text-white text-2xl font-semibold`;
+            }
+        });
+
+        let selectedSport = '';
+        let selectedDate = '';
+        let selectedTime = '06:00 AM';
+
+        // Sport Selection
+        function selectSport(button, sport) {
+            document.querySelectorAll('.sport-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            button.classList.add('selected');
+            selectedSport = sport;
+        }
+
+        // Date Selection
+        function selectDate(button) {
+            document.querySelectorAll('.date-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            button.classList.add('selected');
+            
+            const day = button.querySelector('.text-xs').textContent;
+            const date = button.querySelector('.text-lg').textContent;
+            const month = button.querySelectorAll('.text-xs')[1].textContent;
+            selectedDate = `${day}, ${date} ${month} 2026`;
+        }
+
+        // Time Slider
+        function updateTime(value) {
+            const hours = Math.floor(value);
+            const minutes = (value % 1) * 60;
+            
+            // Format time
+            const period = hours >= 12 ? 'PM' : 'AM';
+            const displayHours = hours > 12 ? hours - 12 : (hours === 0 ? 12 : hours);
+            const displayMinutes = minutes === 0 ? '00' : '30';
+            
+            const timeString = `${displayHours.toString().padStart(2, '0')}:${displayMinutes}`;
+            document.getElementById('selectedTime').textContent = timeString;
+            selectedTime = `${timeString} ${period}`;
+            
+            // Update time of day
+            let timeOfDay;
+            if (hours >= 6 && hours < 12) {
+                timeOfDay = 'Morning';
+            } else if (hours >= 12 && hours < 17) {
+                timeOfDay = 'Afternoon';
+            } else if (hours >= 17 && hours < 21) {
+                timeOfDay = 'Evening';
+            } else {
+                timeOfDay = 'Night';
+            }
+            document.getElementById('timeOfDay').textContent = timeOfDay;
+        }
+
+        // Send Invite
+        function sendInvite() {
+            const message = document.getElementById('inviteMessage').value;
+            const player = JSON.parse(sessionStorage.getItem('selectedPlayer'));
+            
+            if (!selectedSport) {
+                alert('Please select a sport');
+                return;
+            }
+            
+            if (!selectedDate) {
+                alert('Please select a date');
+                return;
+            }
+            
+            // Create invite summary
+            const inviteData = {
+                player: player.name,
+                sport: selectedSport,
+                date: selectedDate,
+                time: selectedTime,
+                message: message
+            };
+            
+            console.log('Invite sent:', inviteData);
+            
+            // Show success message
+            alert(`Invite sent to ${player.name}!\n\nSport: ${selectedSport}\nDate: ${selectedDate}\nTime: ${selectedTime}`);
+            
+            // Go back to players page
+            window.history.back();
+        }
+    </script>
+
+</body>
+</html>

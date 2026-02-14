@@ -1,4 +1,3 @@
-cat > /mnt/user-data/outputs/football.html << 'EOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +5,7 @@ cat > /mnt/user-data/outputs/football.html << 'EOF'
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football Venues - Court</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -85,7 +85,7 @@ cat > /mnt/user-data/outputs/football.html << 'EOF'
             <!-- Cards Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Football Card 1 -->
-                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/15 hover:-translate-y-1 group">
+                <div onclick="bookNow('venue1')"  class="bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/15 hover:-translate-y-1 group">
                     <div class="relative">
                         <span class="absolute top-3.5 right-3.5 bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-semibold z-10">Available now</span>
                         <img src="https://images.unsplash.com/photo-1459865264687-595d652de67e?w=500&h=300&fit=crop" alt="Football Turf Arena" class="h-52 w-full object-cover">
@@ -96,7 +96,7 @@ cat > /mnt/user-data/outputs/football.html << 'EOF'
                                 <h3 class="text-xl font-semibold text-gray-900 tracking-tight">Urban Sports Arena</h3>
                                 <div class="text-sm text-gray-500 flex items-center gap-1 mb-4">
                                     <span>📍</span>
-                                    <span>Andheri West • 2.3 km</span>
+                                    <span>Andheri West •</span>
                                 </div>
                             </div>
                             <div class="flex items-center gap-1 bg-amber-100 px-2.5 py-1.5 rounded-full flex-shrink-0 ml-3">
@@ -124,7 +124,7 @@ cat > /mnt/user-data/outputs/football.html << 'EOF'
                 </div>
 
                 <!-- Football Card 2 -->
-                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/15 hover:-translate-y-1 group">
+                <div onclick="bookVenue('venue7')"  class="bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/15 hover:-translate-y-1 group">
                     <div class="relative">
                         <span class="absolute top-3.5 right-3.5 bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-semibold z-10">Popular</span>
                         <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500&h=300&fit=crop" alt="Football Stadium" class="h-52 w-full object-cover">
@@ -135,7 +135,7 @@ cat > /mnt/user-data/outputs/football.html << 'EOF'
                                 <h3 class="text-xl font-semibold text-gray-900 tracking-tight">Victory Football Ground</h3>
                                 <div class="text-sm text-gray-500 flex items-center gap-1 mb-4">
                                     <span>📍</span>
-                                    <span>Bandra • 3.1 km</span>
+                                    <span>Bandra •</span>
                                 </div>
                             </div>
                             <div class="flex items-center gap-1 bg-amber-100 px-2.5 py-1.5 rounded-full flex-shrink-0 ml-3">
@@ -174,7 +174,7 @@ cat > /mnt/user-data/outputs/football.html << 'EOF'
                                 <h3 class="text-xl font-semibold text-gray-900 tracking-tight">Prime Turf Arena</h3>
                                 <div class="text-sm text-gray-500 flex items-center gap-1 mb-4">
                                     <span>📍</span>
-                                    <span>Powai • 4.5 km</span>
+                                    <span>Powai •</span>
                                 </div>
                             </div>
                             <div class="flex items-center gap-1 bg-amber-100 px-2.5 py-1.5 rounded-full flex-shrink-0 ml-3">
@@ -194,123 +194,6 @@ cat > /mnt/user-data/outputs/football.html << 'EOF'
                         <div class="flex justify-between items-center pt-4.5 border-t border-gray-200">
                             <div class="flex items-baseline gap-1">
                                 <span class="text-3xl font-bold text-emerald-700 tracking-tight">₹1,800</span>
-                                <span class="text-sm text-gray-500 font-medium">/hr</span>
-                            </div>
-                            <button class="bg-emerald-500 text-white px-7 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 hover:bg-emerald-600 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-emerald-500/25 active:translate-y-0">Book</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Football Card 4 -->
-                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/15 hover:-translate-y-1 group">
-                    <div class="relative">
-                        <span class="absolute top-3.5 right-3.5 bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-semibold z-10">Verified</span>
-                        <img src="https://images.unsplash.com/photo-1589487391680-7f0e76c0a0ff?w=500&h=300&fit=crop" alt="Football Pitch" class="h-52 w-full object-cover">
-                    </div>
-                    <div class="p-5.5">
-                        <div class="flex justify-between items-start mb-2">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 tracking-tight">Elite Football Hub</h3>
-                                <div class="text-sm text-gray-500 flex items-center gap-1 mb-4">
-                                    <span>📍</span>
-                                    <span>Thane • 6.2 km</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-1 bg-amber-100 px-2.5 py-1.5 rounded-full flex-shrink-0 ml-3">
-                                <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 fill-amber-500">
-                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                                </svg>
-                                <span class="font-semibold text-sm text-amber-700">4.8</span>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-2.5 mb-5 flex-wrap text-sm text-gray-500">
-                            <span>Football</span>
-                            <span class="w-1 h-1 bg-gray-400 rounded-full opacity-50"></span>
-                            <span>7v7</span>
-                            <span class="w-1 h-1 bg-gray-400 rounded-full opacity-50"></span>
-                            <span>Astro turf</span>
-                        </div>
-                        <div class="flex justify-between items-center pt-4.5 border-t border-gray-200">
-                            <div class="flex items-baseline gap-1">
-                                <span class="text-3xl font-bold text-emerald-700 tracking-tight">₹2,400</span>
-                                <span class="text-sm text-gray-500 font-medium">/hr</span>
-                            </div>
-                            <button class="bg-emerald-500 text-white px-7 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 hover:bg-emerald-600 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-emerald-500/25 active:translate-y-0">Book</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Football Card 5 -->
-                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/15 hover:-translate-y-1 group">
-                    <div class="relative">
-                        <span class="absolute top-3.5 right-3.5 bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-semibold z-10">New listing</span>
-                        <img src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?w=500&h=300&fit=crop" alt="Football Field" class="h-52 w-full object-cover">
-                    </div>
-                    <div class="p-5.5">
-                        <div class="flex justify-between items-start mb-2">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 tracking-tight">Striker's Paradise</h3>
-                                <div class="text-sm text-gray-500 flex items-center gap-1 mb-4">
-                                    <span>📍</span>
-                                    <span>Goregaon • 5.8 km</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-1 bg-amber-100 px-2.5 py-1.5 rounded-full flex-shrink-0 ml-3">
-                                <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 fill-amber-500">
-                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                                </svg>
-                                <span class="font-semibold text-sm text-amber-700">4.6</span>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-2.5 mb-5 flex-wrap text-sm text-gray-500">
-                            <span>Football</span>
-                            <span class="w-1 h-1 bg-gray-400 rounded-full opacity-50"></span>
-                            <span>7v7</span>
-                            <span class="w-1 h-1 bg-gray-400 rounded-full opacity-50"></span>
-                            <span>Floodlights</span>
-                        </div>
-                        <div class="flex justify-between items-center pt-4.5 border-t border-gray-200">
-                            <div class="flex items-baseline gap-1">
-                                <span class="text-3xl font-bold text-emerald-700 tracking-tight">₹2,000</span>
-                                <span class="text-sm text-gray-500 font-medium">/hr</span>
-                            </div>
-                            <button class="bg-emerald-500 text-white px-7 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 hover:bg-emerald-600 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-emerald-500/25 active:translate-y-0">Book</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Football Card 6 -->
-                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden cursor-pointer shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/15 hover:-translate-y-1 group">
-                    <div class="relative">
-                        <span class="absolute top-3.5 right-3.5 bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-semibold z-10">Available now</span>
-                        <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=500&h=300&fit=crop" alt="Football Ground" class="h-52 w-full object-cover">
-                    </div>
-                    <div class="p-5.5">
-                        <div class="flex justify-between items-start mb-2">
-                            <div class="flex-1">
-                                <h3 class="text-xl font-semibold text-gray-900 tracking-tight">Champions League Ground</h3>
-                                <div class="text-sm text-gray-500 flex items-center gap-1 mb-4">
-                                    <span>📍</span>
-                                    <span>Panvel • 8.1 km</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-1 bg-amber-100 px-2.5 py-1.5 rounded-full flex-shrink-0 ml-3">
-                                <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 fill-amber-500">
-                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                                </svg>
-                                <span class="font-semibold text-sm text-amber-700">4.9</span>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-2.5 mb-5 flex-wrap text-sm text-gray-500">
-                            <span>Football</span>
-                            <span class="w-1 h-1 bg-gray-400 rounded-full opacity-50"></span>
-                            <span>11v11</span>
-                            <span class="w-1 h-1 bg-gray-400 rounded-full opacity-50"></span>
-                            <span>Natural grass</span>
-                        </div>
-                        <div class="flex justify-between items-center pt-4.5 border-t border-gray-200">
-                            <div class="flex items-baseline gap-1">
-                                <span class="text-3xl font-bold text-emerald-700 tracking-tight">₹3,200</span>
                                 <span class="text-sm text-gray-500 font-medium">/hr</span>
                             </div>
                             <button class="bg-emerald-500 text-white px-7 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 hover:bg-emerald-600 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-emerald-500/25 active:translate-y-0">Book</button>
